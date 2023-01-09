@@ -1,0 +1,80 @@
+!!!
+%title Filter RSS
+%link(href='//ssig33.com/common.css' media='screen' rel='stylesheet' type='text/css')
+%meta(content='width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport')
+%link(href="https://www.hatena.ne.jp/ssig33/" rel='author')
+
+#all
+  .content
+    %h1 Filter RSS
+    %form{method: 'GET', action: '/rss'}
+      %p
+        %label(for='url') URL:
+        %br
+        %input#url{type: 'text', name: 'url', value: 'https://www.techno-edge.net/rss20/index.rdf'}
+      %p
+        %label(for='includes') Includes:
+        %br
+        %input#includes{type: 'text', name: 'includes'}
+      %p
+        %label(for='excludes') Excludes:
+        %br
+        %input#excludes{type: 'text', name: 'excludes', value: "亡き妻"}
+      %p
+        %button{type: 'submit'}
+          Go!
+
+    %h2 How to use
+    %ol
+      %li Enter the URL of the RSS feed you want to filter.
+      %li 
+        Enter the keywords you want to include in the feed.
+        %ul
+          %li If you do not enter anything, all items will be included.
+      %li Enter the keywords you want to exclude in the feed.
+    %h4 Japanese
+    %ol
+      %li フィルタしたいRSSフィードのURLを入力します。
+      %li 
+        含めたいキーワードを入力します。
+        %ul
+          %li 何も入力しない場合は全てのアイテムが含まれます。
+      %li 見たくないキーワードを入力します。
+
+    %div.footer
+      %p
+        %a{href: "https://ssig33.com"} @ssig33
+      %p
+        %a{href: "https://github.com/ssig33/filterrss"} Source code
+
+:css
+  input{
+    width: 100%;
+  }
+  button{
+    border-radius: 5px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 5px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  form{
+    width: 100%;
+  }
+  .content{
+    margin: 20px;
+  }
+  .footer{
+    width: 100%;
+    text-align: center;
+    padding-top: 10rem;
+    font-size: 0.8em;
+    }
+
+  @media(prefers-color-scheme:dark){
+    button{
+      background-color: #333;
+      color: #eee;
+    }
+  }
