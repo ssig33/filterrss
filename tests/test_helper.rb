@@ -1,9 +1,11 @@
 ENV['APP_ENV'] = 'test'
 ENV['RACK_ENV'] = 'test'
 
+require 'bundler'
+Bundler.setup
+
 require 'minitest/autorun'
 require 'rack/test'
-require 'webmock'
 
 require_relative '../app'
 

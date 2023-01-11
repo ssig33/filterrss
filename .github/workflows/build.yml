@@ -9,7 +9,17 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - run: rake test
+
   build-and-push-image:
+    needs: [test]
     runs-on: ubuntu-latest
     permissions:
       contents: read
