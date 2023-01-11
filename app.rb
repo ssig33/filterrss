@@ -50,6 +50,6 @@ get '/rss' do
   end
 
   output.target!
-rescue
-  "error: Please report this issue to mail@ssig33.com. If you think this is a bug."
+#rescue
+#  "error: Please report this issue to mail@ssig33.com. If you think this is a bug."
 end

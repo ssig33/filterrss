@@ -1,32 +1,31 @@
 require 'rexml/document'
+require 'rss'
 
 class RssParser
   def initialize xml
-    @rss = REXML::Document.new xml
+    @rss = RSS::Parser.parse(xml, false)
   end
 
   def title
-    (@rss.elements['rss/channel/title'] || @rss.elements['rss/title']).text
+    @rss.channel.title
   end
 
   def link
-    (@rss.elements['rss/channel/link'] || @rss.elements['rss/link']).text
+    @rss.channel.link
   end
 
   def description
-    (@rss.elements['rss/channel/description'] || @rss.elements['rss/description']).text
+    @rss.channel.description
   end
 
   def items
-    array = []
-    @rss.elements.each('rss/channel/item') do |item|
-      i = Struct.new(:title, :link, :description, :to_s).new
-      i.title = item.elements['title'].text
-      i.link = item.elements['link'].text
-      i.description = item.elements['description'].text
-      i.to_s = item.to_s
-      array.push i
+    @rss.items.map do |item|
+      s = Struct.new(:title, :link, :description, :to_s).new
+      s.title = item.title
+      s.link = item.link
+      s.description = item.description
+      s.to_s = item.to_s
+      s
     end
-    array
   end
 end
