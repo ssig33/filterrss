@@ -4,10 +4,14 @@ require 'bundler'
 Bundler.setup
 
 require 'sinatra'
-require 'rexml/document'
 require 'sinatra/reloader' if development?
 require 'rest-client'
 require 'builder'
+require './rss_parser'
+
+configure do
+  also_reload './rss_parser.rb' if development?
+end
 
 get '/' do
   haml :index
@@ -20,9 +24,7 @@ get '/rss' do
   includes = params[:includes].to_s.split(',')
   excludes = params[:excludes].to_s.split(',')
 
-  rss = REXML::Document.new(xml)
-
-  # doc.channel
+  rss = RssParser.new(xml)
 
   content_type 'application/rss+xml'
 
@@ -31,19 +33,17 @@ get '/rss' do
 
   output.rss(version: '2.0') do
     output.channel do
-      output.title rss.elements['rss/channel/title'].text
-      output.link rss.elements['rss/channel/link'].text
-      output.description rss.elements['rss/channel/description'].text
+      output.title rss.title
+      output.link rss.link
+      output.description rss.description
 
-      rss.elements.each('rss/channel/item') do |item|
-        text = item.to_s
-        next if includes.count.positive? && includes.none? { text.match(_1) }
-        next if excludes.count.positive? && excludes.any? { text.match(_1) }
-
+      rss.items.each do |item|
+        next if includes.count.positive? && includes.none? { item.to_s.match(_1) }
+        next if excludes.count.positive? && excludes.any? { item.to_s.match(_1) }
         output.item do
-          output.title item.elements['title'].text
-          output.link item.elements['link'].text
-          output.description item.elements['description'].text
+          output.title item.title
+          output.link item.link
+          output.description item.description
         end
       end
     end
