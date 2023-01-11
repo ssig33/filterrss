@@ -16,3 +16,9 @@ gem "sinatra-contrib", "~> 3.0"
 gem "rest-client", "~> 2.1"
 
 gem "builder", "~> 3.2"
+
+gem "minitest", "~> 5.17"
+
+gem "rack", "~> 2.2"
+
+gem "rack-test", "~> 2.0"
