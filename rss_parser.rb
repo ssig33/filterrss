@@ -6,15 +6,15 @@ class RssParser
   end
 
   def title
-    @rss.elements['rss/channel/title'].text
+    (@rss.elements['rss/channel/title'] || @rss.elements['rss/title']).text
   end
 
   def link
-    @rss.elements['rss/channel/link'].text
+    (@rss.elements['rss/channel/link'] || @rss.elements['rss/link']).text
   end
 
   def description
-    @rss.elements['rss/channel/description'].text
+    (@rss.elements['rss/channel/description'] || @rss.elements['rss/description']).text
   end
 
   def items
