@@ -24,3 +24,5 @@ gem "rack", "~> 2.2"
 gem "rack-test", "~> 2.0"
 
 gem "rss", "~> 0.2.9"
+
+gem "rake", "~> 13.0"
