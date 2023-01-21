@@ -1,9 +1,10 @@
-# exec test (tests/**/*_test.rb)
-# this is the default task
-task :test do
-  Dir.glob('tests/**/*_test.rb').each do |file|
-    sh "ruby #{file}"
-  end
-end
+# frozen_string_literal: true
 
-task default: :test
+require 'rake/testtask'
+
+task default: [:test]
+
+Rake::TestTask.new do |test|
+  test.test_files = Dir['tests/**/*_test.rb']
+  test.verbose = true
+end

@@ -5,7 +5,13 @@ require 'bundler'
 Bundler.setup
 
 require 'minitest/autorun'
+require 'minitest/stub_any_instance'
+require 'minitest/autorun'
+require 'minitest/around/spec'
+require 'webmock/minitest'
 require 'rack/test'
+
+WebMock.disable_net_connect!
 
 require_relative '../app'
 
