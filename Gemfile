@@ -11,7 +11,7 @@ gem "rexml", "~> 3.2"
 
 gem "haml", "~> 6.1"
 
-gem "sinatra-contrib", "~> 3.0"
+gem "sinatra-contrib", "~> 4.0"
 
 gem "rest-client", "~> 2.1"
 
