@@ -19,7 +19,7 @@ GEM
     mime-types (3.4.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2022.0105)
-    minitest (5.17.0)
+    minitest (5.22.2)
     minitest-around (0.5.0)
       minitest (~> 5.0)
     minitest-stub_any_instance (1.0.3)
