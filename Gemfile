@@ -4,14 +4,14 @@ source "https://rubygems.org"
 
 # gem "rails"
 
-gem "sinatra", "~> 3.0"
+gem "sinatra"
 gem "puma", "~> 6.0"
 
 gem "rexml", "~> 3.2"
 
 gem "haml", "~> 6.1"
 
-gem "sinatra-contrib", "~> 3.0"
+gem "sinatra-contrib"
 
 gem "rest-client", "~> 2.1"
 
@@ -19,7 +19,7 @@ gem "builder", "~> 3.2"
 
 gem "minitest", "~> 5.17"
 
-gem "rack", "~> 2.2"
+gem "rack"
 
 gem "rack-test", "~> 2.0"
 
