@@ -19,7 +19,7 @@ gem "builder", "~> 3.2"
 
 gem "minitest", "~> 5.17"
 
-gem "rack", "~> 2.2"
+gem "rack", "~> 3.0"
 
 gem "rack-test", "~> 2.0"
 
