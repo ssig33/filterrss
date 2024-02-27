@@ -1,6 +1,6 @@
 require './tests/test_helper'
 
-class WelcomeTest < MiniTest::Test
+class WelcomeTest < Minitest::Test
   describe "GET /" do
     it "should be successful" do
       get '/'

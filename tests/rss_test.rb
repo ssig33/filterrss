@@ -2,7 +2,7 @@
 
 require './tests/test_helper'
 
-class RssTest < MiniTest::Test
+class RssTest < Minitest::Test
   around do |test|
     RssParser.stub_any_instance(:title, 'title') do
       RssParser.stub_any_instance(:link, 'link') do

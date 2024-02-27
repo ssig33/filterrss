@@ -15,9 +15,9 @@ WebMock.disable_net_connect!
 
 require_relative '../app'
 
-class MiniTest::Test
+class Minitest::Test
   include Rack::Test::Methods
-  extend MiniTest::Spec::DSL
+  extend Minitest::Spec::DSL
 
   def app
     Sinatra::Application
