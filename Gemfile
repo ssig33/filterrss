@@ -34,3 +34,7 @@ gem "webmock", "~> 3.18"
 gem "minitest-around", "~> 0.5.0"
 
 gem "rackup", "~> 2.1"
+
+gem "logger", "~> 1.6"
+
+gem "ostruct", "~> 0.6.0"

@@ -1,6 +1,6 @@
 VERSION 0.6
 
-FROM ruby:3.3.0
+FROM ruby:3.3.5
 WORKDIR /app
 
 build:
