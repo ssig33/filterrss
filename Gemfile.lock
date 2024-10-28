@@ -52,7 +52,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rexml (3.3.8)
+    rexml (3.3.9)
     rss (0.2.9)
       rexml
     ruby2_keywords (0.0.5)
@@ -95,7 +95,7 @@ DEPENDENCIES
   rackup (~> 2.1)
   rake (~> 13.0)
   rest-client (~> 2.1)
-  rexml (~> 3.2)
+  rexml (~> 3.3)
   rss (~> 0.2.9)
   sinatra
   sinatra-contrib
