@@ -7,7 +7,7 @@ source "https://rubygems.org"
 gem "sinatra"
 gem "puma", "~> 6.0"
 
-gem "rexml", "~> 3.2"
+gem "rexml", "~> 3.3"
 
 gem "haml", "~> 6.1"
 
