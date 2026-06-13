@@ -5,7 +5,7 @@ source "https://rubygems.org"
 # gem "rails"
 
 gem "sinatra"
-gem "puma", "~> 6.0"
+gem "puma", "~> 7.0"
 
 gem "rexml", "~> 3.2"
 
